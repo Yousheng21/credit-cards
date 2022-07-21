@@ -1,0 +1,53 @@
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  gap: 10px;
+  align-self: center;
+  padding: 20px;
+  max-height: 500px;
+
+  &>div {
+    min-height: 200px;
+    min-width: 350px;
+    border-radius: 15px;
+  }
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 15px;
+    color: white;
+
+    &>div {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &-add {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 3px 5px 5px #e8e8e8;
+    transition: transform 0.5s ease-in-out;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.5s ease-in-out;
+
+      img{
+        filter: contrast(150%);
+      }
+    }
+  }
+}

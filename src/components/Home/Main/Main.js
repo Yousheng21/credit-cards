@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './main.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {displayCount} from "../../../utils/logic";
+import {getCards} from "../../../redux/actions/actionCards";
 
 export const Main = () => {
+    const dispatch = useDispatch();
+    const cards = useSelector(state => state.cards.array);
+
+    useEffect(() => {
+        if (!cards) dispatch(getCards());
+    }, [cards])
+
     return (
         <section className="main">
             <div className="main-cards">
@@ -9,7 +19,7 @@ export const Main = () => {
                     <h1>
                         Банковские карты
                     </h1>
-                    <span>00</span>
+                    <span>{displayCount(cards?.length)}</span>
                 </div>
                 <div>
                     <h1>

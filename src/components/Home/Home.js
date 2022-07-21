@@ -9,10 +9,12 @@ export const Home = () => {
     return (
         <div className="home">
             <div className="home-tabs">
-                <h3 className={clsx({active:tab === ''})}>
-                    <Link to={""}>Главная</Link></h3>
-                <h3 className={clsx({active:tab === 'mycards'})}>
-                    <Link to={"mycards"}>Мои карты</Link></h3>
+                <Link to={""}>
+                    <h3 className={clsx({active:tab === ''})}>Главная</h3>
+                </Link>
+                <Link to={"mycards"}>
+                    <h3 className={clsx({active:tab === 'mycards'})}>Мои карты</h3>
+                </Link>
             </div>
             <div className="home-block">
                 <Outlet />
